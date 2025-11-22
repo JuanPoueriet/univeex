@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { BookingService, BookingData } from '../../core/services/booking.service';
-import { ExcursionsService } from '../../core/services/excursions.service';
-import { Excursion } from '../../core/models/excursion.model';
+import { BookingService, BookingData } from '@univeex/booking/data-access';
+import { ExcursionsService } from '@univeex/excursions/data-access';
+import { Excursion } from '@univeex/shared/data-access';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { BookingWizardComponent } from '../booking-wizard/booking-wizard.component';
 
 @Component({
   selector: 'app-booking',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule, BookingWizardComponent],
   templateUrl: './booking.component.html',
   styleUrl: './booking.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -55,6 +56,12 @@ export class BookingComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       if (params['excursionId']) {
         this.bookingForm.patchValue({ excursionId: params['excursionId'] });
+        // También actualizamos el estado del wizard service para compatibilidad
+        this.excursionService.getExcursionById(params['excursionId']).subscribe(exc => {
+            if(exc) {
+                this.bookingService.updateBooking({ excursion: exc });
+            }
+        });
       }
     });
   }
@@ -67,6 +74,9 @@ export class BookingComponent implements OnInit {
       this.excursionService.getExcursionById(excId).subscribe(exc => {
         this.selectedExcursion.set(exc);
         this.calculateTotal(formValue, exc);
+
+        // Sincronizar con el service del wizard
+        if(exc) this.bookingService.updateBooking({ excursion: exc });
       });
     } else {
       // Si ya tenemos la excursión, solo recalcular total

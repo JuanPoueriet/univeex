@@ -1,1 +1,67 @@
-<p>booking-wizard works!</p>
+<div class="container wizard-container">
+  @if (bookingService.bookingSummary().excursion; as exc) {
+    <h2>Reservando: {{ exc.title }}</h2>
+
+    <div class="steps-indicator">
+      <div [class.active]="step() === 1">1. Fecha</div>
+      <div [class.active]="step() === 2">2. Datos</div>
+      <div [class.active]="step() === 3">3. Pago</div>
+    </div>
+
+    <form [formGroup]="form" class="booking-form">
+      @if (step() === 1) {
+        <div class="step-content">
+          <label>Selecciona Fecha</label>
+          <input type="date" formControlName="date" class="form-control">
+
+          <label>Número de Personas</label>
+          <input type="number" formControlName="pax" min="1" class="form-control">
+        </div>
+      }
+
+      @if (step() === 2) {
+        <div class="step-content">
+          <label>Nombre Completo</label>
+          <input type="text" formControlName="name" class="form-control">
+          <label>Email</label>
+          <input type="email" formControlName="email" class="form-control">
+          <label>Hotel / Alojamiento</label>
+          <input type="text" formControlName="hotel" class="form-control">
+        </div>
+      }
+
+      @if (step() === 3) {
+        <div class="summary">
+          <p><strong>Fecha:</strong> {{ form.get('date')?.value }}</p>
+          <p><strong>Pax:</strong> {{ form.get('pax')?.value }}</p>
+          <div class="total">
+            Total a Pagar: \${{ bookingService.totalPrice() }}
+          </div>
+        </div>
+      }
+
+      <div class="actions">
+        @if (step() > 1) {
+          <button (click)="prevStep()" type="button" class="btn-secondary">
+            {{ 'BOOKING.PREV' | translate }}
+          </button>
+        }
+
+        @if (step() < 3) {
+          <button (click)="nextStep()" type="button" class="btn-tropical">
+            {{ 'BOOKING.NEXT' | translate }}
+          </button>
+        }
+
+        @if (step() === 3) {
+          <button (click)="confirm()" type="button" class="btn-tropical">
+            {{ 'BOOKING.CONFIRM' | translate }}
+          </button>
+        }
+      </div>
+    </form>
+  } @else {
+    <p>No has seleccionado ninguna excursión.</p>
+    <a routerLink="/excursiones" class="btn-tropical">Ver Excursiones</a>
+  }
+</div>

@@ -1,1 +1,1 @@
-export * from './lib/booking-data-access/booking-data-access';
+export * from './lib/services/booking.service';

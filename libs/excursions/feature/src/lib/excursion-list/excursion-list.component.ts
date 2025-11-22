@@ -2,11 +2,9 @@ import { Component, OnInit, inject, signal, computed, ChangeDetectionStrategy } 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { ExcursionsService } from '../../../core/services/excursions.service';
-import { Excursion } from '../../../core/models/excursion.model';
-import { ExcursionCardComponent } from '../../../shared/components/excursion-card/excursion-card.component';
-import { BreadcrumbsComponent } from '../../../shared/components/breadcrumbs/breadcrumbs.component';
-import { SkeletonLoaderComponent } from '../../../shared/components/skeleton-loader/skeleton-loader.component';
+import { ExcursionsService } from '@univeex/excursions/data-access';
+import { Excursion } from '@univeex/shared/data-access';
+import { ExcursionCardComponent, BreadcrumbsComponent, SkeletonLoaderComponent } from '@univeex/shared/ui';
 
 @Component({
   selector: 'app-excursion-list',

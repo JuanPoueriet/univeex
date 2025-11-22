@@ -1,1 +1,15 @@
-<p>blog-detail.component works!</p>
+<div class="container page-padding">
+  <a routerLink="/blog" class="back-link">← Volver</a>
+
+  @if (post(); as p) {
+    <h1>{{ p.title }}</h1>
+    <div class="meta">Publicado el {{ p.date | date }}</div>
+    <div class="content">
+      <p>{{ p.summary }}</p>
+      <hr>
+      <p>{{ p.content }}</p>
+    </div>
+  } @else {
+    <p>Cargando artículo o no encontrado...</p>
+  }
+</div>

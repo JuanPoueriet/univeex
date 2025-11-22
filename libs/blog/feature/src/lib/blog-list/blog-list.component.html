@@ -1,1 +1,14 @@
-<p>blog-list.component works!</p>
+<div class="container page-padding">
+  <h1>{{ 'BLOG.TITLE' | translate }}</h1>
+  <div class="grid">
+    @for (post of posts$ | async; track post.slug) {
+      <div class="blog-card">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.summary }}</p>
+        <a [routerLink]="['/blog', post.slug]" class="btn-tropical">
+          {{ 'BLOG.READ_MORE' | translate }}
+        </a>
+      </div>
+    }
+  </div>
+</div>

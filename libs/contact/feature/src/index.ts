@@ -1,1 +1,2 @@
-export * from './lib/contact-feature/contact-feature';
+export * from './lib/contact.routes';
+export * from './lib/contact.component';
