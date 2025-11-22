@@ -1,0 +1,25 @@
+<section class="testimonials">
+  <div class="container">
+    <h2>Lo que dicen nuestros viajeros</h2>
+    <swiper-container
+      slides-per-view="1"
+      space-between="30"
+      pagination="true"
+      loop="true"
+      breakpoints='{"768": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}}'
+    >
+      @for (t of testimonials; track t.name) {
+      <swiper-slide>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"{{ t.text }}"</p>
+          <div class="author">
+            <img [src]="t.avatar" alt="Avatar" />
+            <span>{{ t.name }}</span>
+          </div>
+        </div>
+      </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+</section>

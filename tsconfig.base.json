@@ -14,7 +14,31 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@univeex/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@univeex/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@univeex/shared/util": ["libs/shared/util/src/index.ts"],
+      "@univeex/about/feature": ["libs/about/feature/src/index.ts"],
+      "@univeex/about/data-access": ["libs/about/data-access/src/index.ts"],
+      "@univeex/blog/feature": ["libs/blog/feature/src/index.ts"],
+      "@univeex/blog/data-access": ["libs/blog/data-access/src/index.ts"],
+      "@univeex/booking/feature": ["libs/booking/feature/src/index.ts"],
+      "@univeex/booking/data-access": ["libs/booking/data-access/src/index.ts"],
+      "@univeex/contact/feature": ["libs/contact/feature/src/index.ts"],
+      "@univeex/contact/data-access": ["libs/contact/data-access/src/index.ts"],
+      "@univeex/excursions/feature": ["libs/excursions/feature/src/index.ts"],
+      "@univeex/excursions/data-access": [
+        "libs/excursions/data-access/src/index.ts"
+      ],
+      "@univeex/home/feature": ["libs/home/feature/src/index.ts"],
+      "@univeex/home/data-access": ["libs/home/data-access/src/index.ts"],
+      "@univeex/legal/feature": ["libs/legal/feature/src/index.ts"],
+      "@univeex/legal/data-access": ["libs/legal/data-access/src/index.ts"],
+      "@univeex/user/feature": ["libs/user/feature/src/index.ts"],
+      "@univeex/user/data-access": ["libs/user/data-access/src/index.ts"],
+      "@univeex/vendor/feature": ["libs/vendor/feature/src/index.ts"],
+      "@univeex/vendor/data-access": ["libs/vendor/data-access/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

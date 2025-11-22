@@ -1,0 +1,53 @@
+<nav class="navbar" [class.scrolled]="scrolled()">
+  <div class="container navbar-container">
+    <div class="navbar-logo">
+      <a [routerLink]="['/', currentLang()]">
+        <span class="logo-text">PuntaCana<span class="highlight">Trips</span></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu" [class.active]="menuOpen()">
+      <ul class="navbar-links">
+        <li><a [routerLink]="['/', currentLang()]">{{ 'NAV.HOME' | translate }}</a></li>
+        <li><a [routerLink]="['/', currentLang(), 'excursions']">{{ 'NAV.EXCURSIONS' | translate }}</a></li>
+
+        @if (!auth.isVendor()) {
+            <li><a [routerLink]="['/', currentLang(), 'blog']">{{ 'NAV.BLOG' | translate }}</a></li>
+        }
+      </ul>
+
+      <div class="navbar-actions">
+        @if (auth.isVendor()) {
+            <a routerLink="/vendor/dashboard" class="btn-host-mode">Modo Anfitrión</a>
+        } @else {
+            <a (click)="loginVendor()" class="link-host">Hazte Anfitrión</a>
+        }
+
+        <div class="lang-switcher">
+             <button (click)="switchLang('es')">ES</button>
+        </div>
+
+        @if (auth.isLoggedIn()) {
+            <div class="user-menu-wrapper">
+                <div class="user-avatar" (click)="toggleUserMenu()">
+                    <img [src]="auth.currentUser()?.avatar" alt="User">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                @if (showUserMenu()) {
+                    <div class="dropdown-menu">
+                        <div class="menu-header">Hola, {{ auth.currentUser()?.name }}</div>
+                        <a routerLink="/my-trips">Mis Viajes</a>
+                        <a routerLink="/wishlist">Lista de deseos</a>
+                        <hr>
+                        <a (click)="logout()">Cerrar Sesión</a>
+                    </div>
+                }
+            </div>
+        } @else {
+            <button class="btn btn-sm btn-tropical" (click)="loginUser()">Acceder</button>
+        }
+      </div>
+    </div>
+  </div>
+</nav>

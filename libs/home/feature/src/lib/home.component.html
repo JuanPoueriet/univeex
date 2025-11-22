@@ -1,0 +1,106 @@
+<section class="hero-global">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop" alt="Travel World">
+    <div class="overlay"></div>
+  </div>
+
+  <div class="hero-content container">
+    <h1 class="fade-in-up">{{ 'HOME.HERO_TITLE' | translate }}</h1>
+    <p class="subtitle">{{ 'HOME.HERO_SUBTITLE' | translate }}</p>
+
+    <div class="search-bar-container fade-in-up delay-1">
+      <div class="search-input-group">
+        <div class="input-wrapper">
+          <label>Destino</label>
+          <input type="text" placeholder="¿A dónde quieres ir? (ej. París, Tokio)">
+        </div>
+        <div class="divider"></div>
+        <div class="input-wrapper">
+          <label>Fecha</label>
+          <input type="date">
+        </div>
+        <button class="btn-search" routerLink="./excursions">
+          <i class="fas fa-search"></i> Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="categories-section container">
+  <h2>Explora por categoría</h2>
+  <div class="categories-grid">
+    <div class="category-card">
+      <i class="fas fa-landmark"></i>
+      <span>Cultura</span>
+    </div>
+    <div class="category-card">
+      <i class="fas fa-utensils"></i>
+      <span>Gastronomía</span>
+    </div>
+    <div class="category-card">
+      <i class="fas fa-leaf"></i>
+      <span>Naturaleza</span>
+    </div>
+    <div class="category-card">
+      <i class="fas fa-hiking"></i>
+      <span>Aventura</span>
+    </div>
+    <div class="category-card">
+      <i class="fas fa-umbrella-beach"></i>
+      <span>Playas</span>
+    </div>
+  </div>
+</section>
+
+<section class="container featured">
+  <div class="section-header">
+    <h2>Trending Global 🌍</h2>
+    <p class="subtitle">Lo más reservado por viajeros esta semana</p>
+  </div>
+
+  <div class="grid">
+    @for (excursion of excursions$ | async; track excursion.id) {
+      <app-excursion-card [excursion]="excursion"></app-excursion-card>
+    }
+  </div>
+
+  <div class="text-center mt-lg">
+    <a routerLink="./excursions" class="btn btn-outline">Ver todas las experiencias</a>
+  </div>
+</section>
+
+<section class="vendor-cta container">
+  <div class="vendor-content">
+    <div class="text">
+      <h2>Gana dinero compartiendo tu pasión</h2>
+      <p>Únete a miles de anfitriones y agencias que venden sus tours en nuestra plataforma global.</p>
+      <button class="btn btn-light btn-lg" routerLink="/vendor/dashboard">Empezar a vender</button>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1000&auto=format&fit=crop" alt="Host">
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container">
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <i class="fas fa-globe-americas"></i>
+        <h3>Cobertura Mundial</h3>
+        <p>Experiencias en más de 50 países.</p>
+      </div>
+      <div class="benefit-item">
+        <i class="fas fa-headset"></i>
+        <h3>Soporte 24/7</h3>
+        <p>Estamos contigo en cada paso de tu viaje.</p>
+      </div>
+      <div class="benefit-item">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Reserva Segura</h3>
+        <p>Tu información y pagos están protegidos.</p>
+      </div>
+    </div>
+  </div>
+</section>

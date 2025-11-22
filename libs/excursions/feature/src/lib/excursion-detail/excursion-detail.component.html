@@ -1,0 +1,112 @@
+@if (excursion(); as exc) {
+  <div class="excursion-detail">
+
+    <div class="gallery-header">
+      <img [ngSrc]="exc.imageUrl" [alt]="exc.title" fill priority class="main-img">
+      <div class="gallery-overlay container">
+         <a routerLink="/excursions" class="back-link">← Volver</a>
+      </div>
+    </div>
+
+    <div class="container content-grid">
+
+      <div class="main-info">
+
+        <div class="header">
+          <div class="location-tag">
+            <i class="fas fa-map-marker-alt"></i> {{ exc.location.city }}, {{ exc.location.country }}
+          </div>
+          <h1>{{ exc.title }}</h1>
+          <div class="meta">
+            <span><i class="far fa-clock"></i> {{ exc.duration }}</span>
+            <span><i class="fas fa-star"></i> {{ exc.rating }} ({{ exc.reviewsCount }} reseñas)</span>
+            <span><i class="fas fa-bolt"></i> {{ exc.instantConfirmation ? 'Confirmación Inmediata' : 'Confirmación Manual' }}</span>
+          </div>
+        </div>
+
+        <div class="vendor-card-inline">
+          <img [src]="exc.vendor.logoUrl" class="vendor-avatar" alt="Logo Anfitrión">
+          <div class="vendor-info">
+            <span class="label">Experiencia ofrecida por</span>
+            <h4 class="vendor-name">{{ exc.vendor.name }} @if(exc.vendor.verified){ <i class="fas fa-check-circle text-primary"></i> }</h4>
+            <div class="vendor-stats">
+               <span>Se unió en {{ exc.vendor.joinedDate | date:'yyyy' }}</span> •
+               <span>★ {{ exc.vendor.rating }} Calificación</span>
+            </div>
+          </div>
+          <button class="btn btn-outline-sm">Contactar</button>
+        </div>
+
+        <div class="description">
+          <h2>Lo que harás</h2>
+          <p>{{ exc.fullDescription }}</p>
+        </div>
+
+        <div class="highlights">
+          <h3>Lo más destacado</h3>
+          <ul>
+            @for (item of exc.highlights; track item) {
+              <li><i class="fas fa-check"></i> {{ item }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="lists-grid">
+          <div class="includes">
+            <h4>Incluye</h4>
+            <ul>
+              @for (item of exc.includes; track item) {
+                <li><i class="fas fa-check-circle text-success"></i> {{ item }}</li>
+              }
+            </ul>
+          </div>
+          <div class="not-includes">
+            <h4>No Incluye</h4>
+            <ul>
+              @for (item of exc.notIncludes; track item) {
+                <li><i class="fas fa-times-circle text-danger"></i> {{ item }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="sidebar">
+        <div class="booking-card sticky">
+          <div class="price-tag">
+            <div class="price-row">
+              <span class="amount">\${{ exc.price }}</span>
+              <span class="unit">/ persona</span>
+            </div>
+            @if (exc.freeCancellation) {
+              <div class="cancellation-badge">Cancelación Gratuita</div>
+            }
+          </div>
+
+          <div class="form-placeholder">
+             <div class="fake-input">
+               <label>Fecha</label>
+               <div class="box">Seleccionar fecha</div>
+             </div>
+             <div class="fake-input">
+               <label>Viajeros</label>
+               <div class="box">2 Adultos</div>
+             </div>
+          </div>
+
+          <button class="btn btn-tropical btn-block" (click)="bookNow()">
+            Reservar Ahora
+          </button>
+
+          <div class="secure-note">
+            <i class="fas fa-lock"></i> No se te cobrará nada todavía
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+} @else {
+  <app-loader></app-loader>
+}
