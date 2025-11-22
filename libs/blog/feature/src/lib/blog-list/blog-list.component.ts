@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { BlogService } from '@univeex/blog/data-access';
 
 @Component({
-  selector: 'app-blog-list',
+  selector: 'univeex-blog-list',
   standalone: true,
   imports: [CommonModule, RouterLink, TranslateModule],
   templateUrl: './blog-list.component.html',

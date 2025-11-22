@@ -8,7 +8,7 @@ export interface Breadcrumb {
 }
 
 @Component({
-  selector: 'app-breadcrumbs',
+  selector: 'univeex-breadcrumbs',
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './breadcrumbs.component.html',

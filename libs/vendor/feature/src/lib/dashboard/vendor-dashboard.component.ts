@@ -3,7 +3,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-vendor-dashboard',
+  selector: 'univeex-vendor-dashboard',
   standalone: true,
   imports: [CommonModule, RouterLink, NgOptimizedImage],
   templateUrl: './vendor-dashboard.component.html',

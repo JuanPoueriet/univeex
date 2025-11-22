@@ -18,8 +18,8 @@
         <span class="count">({{ excursion().reviewsCount }})</span>
       </div>
       @if (excursion().vendor.verified) {
-        <div class="vendor-badge" title="Anfitrión Verificado">
-          <i class="fas fa-shield-alt"></i> Superhost
+        <div class="vendor-badge" [title]="'COMMON.VERIFIED_HOST' | translate">
+          <i class="fas fa-shield-alt"></i> {{ 'COMMON.SUPERHOST' | translate }}
         </div>
       }
     </div>
@@ -30,7 +30,7 @@
 
     <div class="card-footer">
       <div class="price">
-        <span class="label">Desde</span>
+        <span class="label">{{ 'COMMON.FROM' | translate }}</span>
         <div class="amount-wrapper">
           @if (excursion().originalPrice) {
             <span class="original-price">\${{ excursion().originalPrice }}</span>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-terms',
+  selector: 'univeex-terms',
   standalone: true,
   imports: [CommonModule],
   template: `

@@ -7,7 +7,7 @@ import { Excursion, SeoService } from '@univeex/shared/data-access';
 import { LoaderComponent } from '@univeex/shared/ui';
 
 @Component({
-  selector: 'app-excursion-detail',
+  selector: 'univeex-excursion-detail',
   standalone: true,
   imports: [CommonModule, TranslateModule, LoaderComponent, NgOptimizedImage, RouterLink, DatePipe],
   templateUrl: './excursion-detail.component.html',

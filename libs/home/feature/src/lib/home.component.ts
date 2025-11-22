@@ -10,7 +10,7 @@ import { register } from 'swiper/element/bundle';
 register();
 
 @Component({
-  selector: 'app-home',
+  selector: 'univeex-home',
   standalone: true,
   imports: [CommonModule, RouterLink, TranslateModule, ExcursionCardComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -2,13 +2,13 @@ import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ExcursionsService } from '../../../core/services/excursions.service';
-// import { AuthService } from '../../../core/services/auth.service';
-import { Excursion } from '../../../core/models/excursion.model';
-import { AuthService } from '../../../core/services/auth.service.ts';
+import { ExcursionsService } from '@univeex/excursions/data-access';
+// import { AuthService } from '@univeex/shared/data-access';
+import { Excursion } from '@univeex/shared/data-access';
+import { AuthService } from '@univeex/shared/data-access';
 
 @Component({
-  selector: 'app-add-excursion',
+  selector: 'univeex-add-excursion',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './add-excursion.component.html',

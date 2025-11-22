@@ -7,7 +7,7 @@ import { Excursion } from '@univeex/shared/data-access';
 import { ExcursionCardComponent, BreadcrumbsComponent, SkeletonLoaderComponent } from '@univeex/shared/ui';
 
 @Component({
-  selector: 'app-excursion-list',
+  selector: 'univeex-excursion-list',
   standalone: true,
   imports: [CommonModule, TranslateModule, FormsModule, ExcursionCardComponent, BreadcrumbsComponent, SkeletonLoaderComponent],
   templateUrl: './excursion-list.component.html',

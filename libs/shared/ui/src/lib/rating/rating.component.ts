@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-rating.component',
+  selector: 'univeex-rating',
   imports: [],
   templateUrl: './rating.component.html',
   styleUrl: './rating.component.scss',

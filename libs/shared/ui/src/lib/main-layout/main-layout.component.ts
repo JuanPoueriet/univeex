@@ -6,7 +6,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
-  selector: 'app-main-layout',
+  selector: 'univeex-main-layout',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, TranslateModule, NavbarComponent, FooterComponent],
   templateUrl: './main-layout.component.html',

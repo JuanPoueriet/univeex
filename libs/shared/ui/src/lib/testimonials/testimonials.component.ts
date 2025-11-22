@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy } from '@ang
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-testimonials',
+  selector: 'univeex-testimonials',
   standalone: true,
   imports: [CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

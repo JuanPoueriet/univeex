@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { BlogService, BlogPost } from '@univeex/blog/data-access';
 
 @Component({
-  selector: 'app-blog-detail',
+  selector: 'univeex-blog-detail',
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './blog-detail.component.html',

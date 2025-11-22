@@ -10,7 +10,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { BookingWizardComponent } from './booking-wizard/booking-wizard.component';
 
 @Component({
-  selector: 'app-booking',
+  selector: 'univeex-booking',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, TranslateModule, BookingWizardComponent],
   templateUrl: './booking.component.html',

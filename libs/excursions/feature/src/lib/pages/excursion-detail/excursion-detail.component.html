@@ -1,1 +1,38 @@
-<p>excursion-detail.component works!</p>
+<div class="container mt-4">
+  <a routerLink="/excursiones" class="back-link">← Volver a Excursiones</a>
+</div>
+
+@if (excursion(); as exc) {
+  <div class="detail-header">
+    <img [src]="exc.imageUrl" class="main-img" [alt]="exc.title">
+  </div>
+
+  <div class="container content-layout">
+    <div class="main-info">
+      <h1>{{ exc.title }}</h1>
+      <p class="desc">{{ exc.description }}</p>
+
+      <h3>{{ 'DETAIL.HIGHLIGHTS' | translate }}</h3>
+      <ul>
+        @for (item of exc.highlights; track item) {
+          <li>✅ {{ item }}</li>
+        }
+      </ul>
+    </div>
+
+    <aside class="booking-sidebar">
+      <div class="card-booking">
+        <div class="price-tag">\${{ exc.price }} <small>per person</small></div>
+        <div class="form-placeholder">
+          <label>Fecha</label>
+          <input type="date" class="form-control">
+          <label>Personas</label>
+          <input type="number" min="1" value="2" class="form-control">
+          <button class="btn-tropical w-full">
+            {{ 'DETAIL.BOOK_NOW' | translate }}
+          </button>
+        </div>
+      </div>
+    </aside>
+  </div>
+}
