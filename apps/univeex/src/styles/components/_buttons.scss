@@ -1,0 +1,51 @@
+@use 'sass:color'; // Importar el módulo de color de Sass
+@use '../variables/index' as vars;
+
+.btn {
+  display: inline-block;
+  padding: vars.$spacing-sm vars.$spacing-lg;
+  border-radius: 50px;
+  font-weight: vars.$font-weight-medium;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  text-align: center;
+
+  &-tropical {
+    background: vars.$gradient-tropical;
+    color: vars.$color-text-inverse;
+    box-shadow: 0 4px 15px rgba(0, 168, 232, 0.3);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 168, 232, 0.4);
+    }
+  }
+
+  &-secondary {
+    background-color: vars.$color-secondary;
+    color: vars.$color-text-main;
+
+    &:hover {
+      // CORRECCIÓN: Usar color.adjust en lugar de darken()
+      background-color: color.adjust(vars.$color-secondary, $lightness: -10%);
+    }
+  }
+
+  &-outline {
+    background: transparent;
+    border: 2px solid vars.$color-primary;
+    color: vars.$color-primary;
+
+    &:hover {
+      background: vars.$color-primary;
+      color: vars.$color-text-inverse;
+    }
+  }
+
+  // Utility para botones pequeños usada en navbar
+  &-sm {
+    padding: vars.$spacing-xs vars.$spacing-md;
+    font-size: vars.$font-size-sm;
+  }
+}

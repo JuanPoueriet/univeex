@@ -1,0 +1,36 @@
+// CORRECCIÓN: Apuntar a 'variables/index' explícitamente
+@use '../variables/index' as vars;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: vars.$font-family-sans;
+  color: vars.$color-text-main;
+  background-color: vars.$color-bg-light;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: vars.$color-primary;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

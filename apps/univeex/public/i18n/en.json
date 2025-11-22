@@ -1,0 +1,43 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "EXCURSIONS": "Excursions",
+    "ABOUT": "About Us",
+    "BLOG": "Blog",
+    "CONTACT": "Contact",
+    "BOOK_NOW": "Book Now"
+  },
+  "HOME": {
+    "HERO_TITLE": "Your Paradise Adventure Starts Here",
+    "HERO_SUBTITLE": "Discover the best excursions in Punta Cana with expert local guides.",
+    "CTA_BOOK": "View Adventures",
+    "FEATURED_TITLE": "Best Selling Experiences"
+  },
+  "DETAIL": {
+    "HIGHLIGHTS": "Highlights",
+    "INCLUDES": "What's included",
+    "NOT_INCLUDES": "Not included",
+    "ITINERARY": "Itinerary",
+    "REVIEWS": "Traveler Reviews",
+    "BOOK_NOW": "Book Now",
+    "PRICE_PER_PERSON": "Price per person"
+  },
+  "BOOKING": {
+    "STEP_1": "Date & Pax",
+    "STEP_2": "Your Info",
+    "STEP_3": "Confirmation",
+    "NEXT": "Next",
+    "PREV": "Back",
+    "CONFIRM": "Confirm & Pay"
+  },
+  "FOOTER": {
+    "ABOUT": "About Us",
+    "LEGAL": "Legal",
+    "CONTACT": "Contact"
+  },
+  "COMMON": {
+    "VIEW_DETAILS": "View Details",
+    "FROM": "From",
+    "DURATION": "Duration"
+  }
+}

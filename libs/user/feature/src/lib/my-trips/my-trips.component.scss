@@ -1,5 +1,5 @@
-@use '../../../../styles/variables/index' as vars;
-@use '../../../../styles/mixins/index' as mixins;
+@use 'variables/index' as vars;
+@use 'mixins/index' as mixins;
 
 .page-padding { padding-top: 4rem; padding-bottom: 4rem; min-height: 70vh; }
 .tabs { margin-bottom: 2rem; border-bottom: 1px solid #eee; display: flex; gap: 2rem; }

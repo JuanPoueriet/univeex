@@ -1,0 +1,43 @@
+{
+  "NAV": {
+    "HOME": "Inicio",
+    "EXCURSIONS": "Excursiones",
+    "ABOUT": "Nosotros",
+    "BLOG": "Blog",
+    "CONTACT": "Contacto",
+    "BOOK_NOW": "Reservar"
+  },
+  "HOME": {
+    "HERO_TITLE": "Tu Aventura en el Paraíso Comienza Aquí",
+    "HERO_SUBTITLE": "Descubre las mejores excursiones en Punta Cana con guías locales expertos.",
+    "CTA_BOOK": "Ver Aventuras",
+    "FEATURED_TITLE": "Experiencias Más Vendidas"
+  },
+  "DETAIL": {
+    "HIGHLIGHTS": "Lo más destacado",
+    "INCLUDES": "Qué incluye",
+    "NOT_INCLUDES": "No incluye",
+    "ITINERARY": "Itinerario",
+    "REVIEWS": "Opiniones de viajeros",
+    "BOOK_NOW": "Reservar Ahora",
+    "PRICE_PER_PERSON": "Precio por persona"
+  },
+  "BOOKING": {
+    "STEP_1": "Fecha y Personas",
+    "STEP_2": "Tus Datos",
+    "STEP_3": "Confirmación",
+    "NEXT": "Siguiente",
+    "PREV": "Atrás",
+    "CONFIRM": "Confirmar y Pagar"
+  },
+  "FOOTER": {
+    "ABOUT": "Sobre Nosotros",
+    "LEGAL": "Legal",
+    "CONTACT": "Contacto"
+  },
+  "COMMON": {
+    "VIEW_DETAILS": "Ver Detalles",
+    "FROM": "Desde",
+    "DURATION": "Duración"
+  }
+}

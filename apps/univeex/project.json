@@ -22,7 +22,10 @@
             "input": "apps/univeex/public"
           }
         ],
-        "styles": ["apps/univeex/src/styles.scss"]
+        "styles": ["apps/univeex/src/styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": ["apps/univeex/src/styles"]
+        }
       },
       "configurations": {
         "production": {
@@ -97,7 +100,10 @@
         "outputPath": "dist/apps/univeex/server",
         "main": "apps/univeex/src/server.ts",
         "tsConfig": "apps/univeex/tsconfig.server.json",
-        "inlineStyleLanguage": "scss"
+        "inlineStyleLanguage": "scss",
+        "stylePreprocessorOptions": {
+          "includePaths": ["apps/univeex/src/styles"]
+        }
       },
       "configurations": {
         "production": {
