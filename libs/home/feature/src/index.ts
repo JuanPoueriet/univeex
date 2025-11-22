@@ -1,1 +1,1 @@
-export * from './lib/home-feature/home-feature';
+export * from './lib/home.component';

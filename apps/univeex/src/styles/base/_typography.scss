@@ -1,0 +1,23 @@
+// CORRECCIÓN: Apuntar explícitamente a 'variables/index' para cargar las fuentes correctas
+@use '../variables/index' as vars;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: vars.$font-family-display;
+  font-weight: vars.$font-weight-bold;
+  margin-bottom: vars.$spacing-md;
+  color: vars.$color-text-main;
+}
+
+h1 { font-size: vars.$font-size-4xl; }
+h2 { font-size: vars.$font-size-3xl; }
+h3 { font-size: vars.$font-size-2xl; }
+
+p {
+  margin-bottom: vars.$spacing-md;
+}
+
+.container {
+  max-width: vars.$container-max-width;
+  margin: 0 auto;
+  padding: 0 vars.$container-padding;
+}

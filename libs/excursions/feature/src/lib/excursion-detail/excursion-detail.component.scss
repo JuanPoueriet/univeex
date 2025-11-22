@@ -1,5 +1,5 @@
-@use 'variables' as vars;
-@use 'mixins' as mixins;
+@use 'variables/index' as vars;
+@use 'mixins/index' as mixins;
 
 .excursion-detail { padding-bottom: vars.$spacing-3xl; }
 

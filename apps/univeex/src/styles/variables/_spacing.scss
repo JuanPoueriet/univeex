@@ -1,0 +1,12 @@
+$spacing-unit: 8px;
+
+$spacing-xs: $spacing-unit * 0.5; // 4px
+$spacing-sm: $spacing-unit;       // 8px
+$spacing-md: $spacing-unit * 2;   // 16px
+$spacing-lg: $spacing-unit * 3;   // 24px
+$spacing-xl: $spacing-unit * 4;   // 32px
+$spacing-2xl: $spacing-unit * 6;  // 48px
+$spacing-3xl: $spacing-unit * 8;  // 64px
+
+$container-max-width: 1200px;
+$container-padding: $spacing-md;

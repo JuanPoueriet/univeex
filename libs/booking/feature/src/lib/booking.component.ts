@@ -7,7 +7,7 @@ import { BookingService, BookingData } from '@univeex/booking/data-access';
 import { ExcursionsService } from '@univeex/excursions/data-access';
 import { Excursion } from '@univeex/shared/data-access';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { BookingWizardComponent } from '../booking-wizard/booking-wizard.component';
+import { BookingWizardComponent } from './booking-wizard/booking-wizard.component';
 
 @Component({
   selector: 'app-booking',

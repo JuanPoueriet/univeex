@@ -1,4 +1,4 @@
-@use '../../../../styles/variables/index' as vars;
+@use 'variables/index' as vars;
 
 .page-padding { padding-top: 4rem; padding-bottom: 4rem; }
 .grid { margin-top: 2rem; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }

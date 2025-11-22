@@ -1,5 +1,5 @@
-@use '../../../../styles/variables/index' as vars;
-@use '../../../../styles/mixins/index' as mixins;
+@use 'variables/index' as vars;
+@use 'mixins/index' as mixins;
 
 .dashboard-wrapper { display: flex; min-height: 100vh; background-color: #f3f4f6; font-family: 'Inter', sans-serif; }
 
