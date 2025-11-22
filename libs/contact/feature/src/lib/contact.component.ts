@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ContactService, ContactMessage } from '@univeex/contact/data-access';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'univeex-contact',
   standalone: true,
   imports: [ReactiveFormsModule, TranslateModule],
   templateUrl: './contact.component.html',

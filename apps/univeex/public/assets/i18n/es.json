@@ -1,0 +1,83 @@
+{
+  "NAV": {
+    "HOME": "Inicio",
+    "EXCURSIONS": "Excursiones",
+    "ABOUT": "Nosotros",
+    "BLOG": "Blog",
+    "CONTACT": "Contacto",
+    "BOOK_NOW": "Reservar"
+  },
+  "HOME": {
+    "HERO_TITLE": "Tu Aventura en el Paraíso Comienza Aquí",
+    "HERO_SUBTITLE": "Descubre las mejores excursiones en Punta Cana con guías locales expertos.",
+    "CTA_BOOK": "Ver Aventuras",
+    "FEATURED_TITLE": "Experiencias Más Vendidas",
+    "SEARCH": {
+      "DESTINATION": "Destino",
+      "DESTINATION_PLACEHOLDER": "¿A dónde quieres ir? (ej. París, Tokio)",
+      "DATE": "Fecha",
+      "BUTTON": "Buscar"
+    },
+    "CATEGORIES": {
+      "TITLE": "Explora por categoría",
+      "CULTURE": "Cultura",
+      "GASTRONOMY": "Gastronomía",
+      "NATURE": "Naturaleza",
+      "ADVENTURE": "Aventura",
+      "BEACHES": "Playas"
+    },
+    "TRENDING": {
+      "TITLE": "Trending Global 🌍",
+      "SUBTITLE": "Lo más reservado por viajeros esta semana",
+      "VIEW_ALL": "Ver todas las experiencias"
+    },
+    "VENDOR": {
+      "TITLE": "Gana dinero compartiendo tu pasión",
+      "TEXT": "Únete a miles de anfitriones y agencias que venden sus tours en nuestra plataforma global.",
+      "BUTTON": "Empezar a vender"
+    },
+    "BENEFITS": {
+      "WORLDWIDE": {
+        "TITLE": "Cobertura Mundial",
+        "TEXT": "Experiencias en más de 50 países."
+      },
+      "SUPPORT": {
+        "TITLE": "Soporte 24/7",
+        "TEXT": "Estamos contigo en cada paso de tu viaje."
+      },
+      "SECURE": {
+        "TITLE": "Reserva Segura",
+        "TEXT": "Tu información y pagos están protegidos."
+      }
+    }
+  },
+  "DETAIL": {
+    "HIGHLIGHTS": "Lo más destacado",
+    "INCLUDES": "Qué incluye",
+    "NOT_INCLUDES": "No incluye",
+    "ITINERARY": "Itinerario",
+    "REVIEWS": "Opiniones de viajeros",
+    "BOOK_NOW": "Reservar Ahora",
+    "PRICE_PER_PERSON": "Precio por persona"
+  },
+  "BOOKING": {
+    "STEP_1": "Fecha y Personas",
+    "STEP_2": "Tus Datos",
+    "STEP_3": "Confirmación",
+    "NEXT": "Siguiente",
+    "PREV": "Atrás",
+    "CONFIRM": "Confirmar y Pagar"
+  },
+  "FOOTER": {
+    "ABOUT": "Sobre Nosotros",
+    "LEGAL": "Legal",
+    "CONTACT": "Contacto"
+  },
+  "COMMON": {
+    "VIEW_DETAILS": "Ver Detalles",
+    "FROM": "Desde",
+    "DURATION": "Duración",
+    "SUPERHOST": "Superhost",
+    "VERIFIED_HOST": "Anfitrión Verificado"
+  }
+}

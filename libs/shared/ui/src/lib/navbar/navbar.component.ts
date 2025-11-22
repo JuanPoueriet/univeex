@@ -6,7 +6,7 @@ import { filter } from 'rxjs';
 import { AuthService } from '@univeex/shared/data-access';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'univeex-navbar',
   standalone: true,
   imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './navbar.component.html',

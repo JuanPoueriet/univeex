@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-loader',
+  selector: 'univeex-loader',
   standalone: true,
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.scss'],

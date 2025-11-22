@@ -1,5 +1,5 @@
 <div class="container page-padding">
-  <app-breadcrumbs [items]="[{label: 'Excursiones'}]"></app-breadcrumbs>
+  <univeex-breadcrumbs [items]="[{label: 'Excursiones'}]"></univeex-breadcrumbs>
 
   <div class="header-section">
     <h1>{{ 'NAV.EXCURSIONS' | translate }}</h1>
@@ -41,11 +41,11 @@
     <main class="results-grid">
       @if (isLoading()) {
         @for (i of [1,2,3,4,5,6]; track i) {
-          <app-skeleton-loader height="380px"></app-skeleton-loader>
+          <univeex-skeleton-loader height="380px"></univeex-skeleton-loader>
         }
       } @else {
         @for (excursion of filteredExcursions(); track excursion.id) {
-          <app-excursion-card [excursion]="excursion"></app-excursion-card>
+          <univeex-excursion-card [excursion]="excursion"></univeex-excursion-card>
         } @empty {
           <div class="no-results">
             <i class="fas fa-search"></i>

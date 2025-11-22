@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-privacy',
+  selector: 'univeex-privacy',
   standalone: true,
   imports: [CommonModule],
   template: `

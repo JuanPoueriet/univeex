@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Excursion } from '@univeex/shared/data-access';
 
 @Component({
-  selector: 'app-excursion-card',
+  selector: 'univeex-excursion-card',
   standalone: true,
   imports: [CommonModule, RouterModule, TranslateModule, NgOptimizedImage],
   templateUrl: './excursion-card.component.html',

@@ -6,7 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-booking-wizard',
+  selector: 'univeex-booking-wizard',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, TranslateModule, RouterLink],
   templateUrl: './booking-wizard.component.html',

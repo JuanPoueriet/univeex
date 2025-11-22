@@ -1,1 +1,8 @@
-<p>excursions-list.component works!</p>
+<div class="container page-padding">
+  <h1>Todas las Excursiones</h1>
+  <div class="grid">
+    @for (excursion of excursions$ | async; track excursion.id) {
+      <univeex-excursion-card [excursion]="excursion"></univeex-excursion-card>
+    }
+  </div>
+</div>

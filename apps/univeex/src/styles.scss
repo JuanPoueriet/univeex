@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+// Global Styles
+@use 'variables';
+@use 'mixins';
+@use 'base';
+@use 'components';
+
+// Third party styles can be imported here if needed
+// @import 'swiper/css';
+// @import 'swiper/css/navigation';
+// @import 'swiper/css/pagination';
