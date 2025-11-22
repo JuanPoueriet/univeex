@@ -75,7 +75,7 @@
     <div class="text">
       <h2>{{ 'HOME.VENDOR.TITLE' | translate }}</h2>
       <p>{{ 'HOME.VENDOR.TEXT' | translate }}</p>
-      <button class="btn btn-light btn-lg" routerLink="/vendor/dashboard">{{ 'HOME.VENDOR.BUTTON' | translate }}</button>
+      <button class="btn btn-light btn-lg" [routerLink]="['/', currentLang(), 'vendor', 'dashboard']">{{ 'HOME.VENDOR.BUTTON' | translate }}</button>
     </div>
     <div class="image">
       <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1000&auto=format&fit=crop" alt="Host">

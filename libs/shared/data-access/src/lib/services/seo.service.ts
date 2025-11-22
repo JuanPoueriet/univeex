@@ -17,7 +17,7 @@ export class SeoService {
   }
 
   updateTags(config: { title: string; description: string; image?: string; slug?: string }) {
-    this.title.setTitle(`${config.title} | PuntaCanaTrips`);
+    this.title.setTitle(`${config.title} | Univeex`);
     this.meta.updateTag({ name: 'description', content: config.description });
     this.meta.updateTag({ property: 'og:title', content: config.title });
     this.meta.updateTag({ property: 'og:description', content: config.description });

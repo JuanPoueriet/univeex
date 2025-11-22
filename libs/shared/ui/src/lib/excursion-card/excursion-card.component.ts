@@ -1,7 +1,7 @@
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, inject, signal } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Excursion } from '@univeex/shared/data-access';
 
 @Component({
@@ -14,4 +14,14 @@ import { Excursion } from '@univeex/shared/data-access';
 })
 export class ExcursionCardComponent {
   excursion = input.required<Excursion>();
+
+  private translate = inject(TranslateService);
+  currentLang = signal('es');
+
+  constructor() {
+      this.currentLang.set(this.translate.currentLang || 'es');
+      this.translate.onLangChange.subscribe((event) => {
+          this.currentLang.set(event.lang);
+      });
+  }
 }

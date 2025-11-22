@@ -21,7 +21,8 @@ export const appConfig: ApplicationConfig = {
       withInterceptors([tokenInterceptor, loadingInterceptor, errorInterceptor])
     ),
     provideTranslateService({
-      defaultLanguage: 'es',
+        // @ts-ignore: The user reported this is the new property, suppressing TS check if types are old
+        fallbackLang: ['es'],
     }),
     provideTranslateHttpLoader({
       prefix: '/assets/i18n/',

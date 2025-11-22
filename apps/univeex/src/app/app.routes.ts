@@ -3,12 +3,17 @@ import { MainLayoutComponent } from '@univeex/shared/ui';
 
 export const appRoutes: Route[] = [
   {
-    path: '',
+    path: ':lang',
     component: MainLayoutComponent,
     children: [
       {
-        path: '',
+        path: 'home',
         loadComponent: () => import('@univeex/home/feature').then(m => m.HomeComponent)
+      },
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
       },
       {
         path: 'excursions',
@@ -44,5 +49,10 @@ export const appRoutes: Route[] = [
       }
     ]
   },
-  { path: '**', redirectTo: '' }
+  {
+    path: '',
+    redirectTo: 'es/home',
+    pathMatch: 'full'
+  },
+  { path: '**', redirectTo: 'es/home' }
 ];
