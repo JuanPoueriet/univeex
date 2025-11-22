@@ -13,6 +13,5 @@ import { Excursion } from '@univeex/shared/data-access';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExcursionCardComponent {
-  // Usando input signal como se solicitó
   excursion = input.required<Excursion>();
 }
