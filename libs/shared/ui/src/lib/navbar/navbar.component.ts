@@ -26,9 +26,14 @@ export class NavbarComponent {
   showUserMenu = signal(false);
 
   constructor() {
+    // Sync signal with service
     this.currentLang.set(this.translate.currentLang || 'es');
+
+    this.translate.onLangChange.subscribe((event) => {
+        this.currentLang.set(event.lang);
+    });
+
     this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
-        // Lógica de idioma existente...
         this.menuOpen.set(false);
         this.showUserMenu.set(false);
     });
@@ -37,11 +42,30 @@ export class NavbarComponent {
   toggleMenu() { this.menuOpen.update(v => !v); }
   toggleUserMenu() { this.showUserMenu.update(v => !v); }
 
-  switchLang(lang: string) { /* Tu lógica existente... */ }
+  switchLang(lang: string) {
+    // MainLayout handles the actual switching and routing if we use the method there,
+    // but here we need to trigger it.
+    // Ideally, we should just navigate to the new URL.
+    const url = this.router.url;
+    const parts = url.split('/'); // ['', 'es', 'home']
+    if (parts.length >= 2) {
+        parts[1] = lang;
+        this.router.navigateByUrl(parts.join('/'));
+    } else {
+        this.router.navigate(['/', lang]);
+    }
+  }
+
   onWindowScroll() { this.scrolled.set(window.scrollY > 50); }
 
   // Actions de Auth mockeados
   loginUser() { this.auth.loginAsUser(); }
-  loginVendor() { this.auth.loginAsVendor(); this.router.navigate(['/vendor/dashboard']); }
-  logout() { this.auth.logout(); this.router.navigate(['/']); }
+  loginVendor() {
+      this.auth.loginAsVendor();
+      this.router.navigate(['/', this.currentLang(), 'vendor', 'dashboard']);
+  }
+  logout() {
+      this.auth.logout();
+      this.router.navigate(['/', this.currentLang()]);
+  }
 }

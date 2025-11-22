@@ -1,7 +1,7 @@
-import { Component, OnInit, inject, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, inject, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ExcursionsService } from '@univeex/excursions/data-access';
 import { ExcursionCardComponent } from '@univeex/shared/ui';
 
@@ -20,7 +20,17 @@ register();
 })
 export class HomeComponent implements OnInit {
   private excursionService = inject(ExcursionsService);
+  private translate = inject(TranslateService);
+
   excursions$ = this.excursionService.getFeaturedExcursions();
+  currentLang = signal('es');
+
+  constructor() {
+      this.currentLang.set(this.translate.currentLang || 'es');
+      this.translate.onLangChange.subscribe((event) => {
+          this.currentLang.set(event.lang);
+      });
+  }
 
   ngOnInit() {
     // Lógica de inicialización

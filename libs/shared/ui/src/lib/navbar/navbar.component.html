@@ -2,13 +2,13 @@
   <div class="container navbar-container">
     <div class="navbar-logo">
       <a [routerLink]="['/', currentLang()]">
-        <span class="logo-text">PuntaCana<span class="highlight">Trips</span></span>
+        <span class="logo-text">Univeex</span>
       </a>
     </div>
 
     <div class="navbar-menu" [class.active]="menuOpen()">
       <ul class="navbar-links">
-        <li><a [routerLink]="['/', currentLang()]">{{ 'NAV.HOME' | translate }}</a></li>
+        <li><a [routerLink]="['/', currentLang(), 'home']">{{ 'NAV.HOME' | translate }}</a></li>
         <li><a [routerLink]="['/', currentLang(), 'excursions']">{{ 'NAV.EXCURSIONS' | translate }}</a></li>
 
         @if (!auth.isVendor()) {
@@ -18,7 +18,7 @@
 
       <div class="navbar-actions">
         @if (auth.isVendor()) {
-            <a routerLink="/vendor/dashboard" class="btn-host-mode">Modo Anfitrión</a>
+            <a [routerLink]="['/', currentLang(), 'vendor', 'dashboard']" class="btn-host-mode">Modo Anfitrión</a>
         } @else {
             <a (click)="loginVendor()" class="link-host">Hazte Anfitrión</a>
         }
@@ -37,8 +37,8 @@
                 @if (showUserMenu()) {
                     <div class="dropdown-menu">
                         <div class="menu-header">Hola, {{ auth.currentUser()?.name }}</div>
-                        <a routerLink="/my-trips">Mis Viajes</a>
-                        <a routerLink="/wishlist">Lista de deseos</a>
+                        <a [routerLink]="['/', currentLang(), 'user', 'my-trips']">Mis Viajes</a>
+                        <a [routerLink]="['/', currentLang(), 'user', 'wishlist']">Lista de deseos</a>
                         <hr>
                         <a (click)="logout()">Cerrar Sesión</a>
                     </div>

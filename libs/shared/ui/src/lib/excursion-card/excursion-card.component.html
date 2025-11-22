@@ -24,7 +24,7 @@
       }
     </div>
 
-    <h3 [routerLink]="['/excursions', excursion().slug]">{{ excursion().title }}</h3>
+    <h3 [routerLink]="['/', currentLang(), 'excursions', excursion().slug]">{{ excursion().title }}</h3>
 
     <p class="description">{{ excursion().shortDescription }}</p>
 

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h3>PuntaCana<span>Tours</span></h3>
+        <h3>Univeex</h3>
         <p>{{ 'HOME.HERO_SUBTITLE' | translate }}</p>
         <div class="social-links">
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
@@ -14,31 +14,31 @@
       <div class="footer-links">
         <h4>{{ 'FOOTER.ABOUT' | translate }}</h4>
         <ul>
-          <li><a routerLink="/about">Misión</a></li>
-          <li><a routerLink="/about">Equipo</a></li>
-          <li><a routerLink="/blog">Blog</a></li>
+          <li><a [routerLink]="['/', currentLang(), 'about']">Misión</a></li>
+          <li><a [routerLink]="['/', currentLang(), 'about']">Equipo</a></li>
+          <li><a [routerLink]="['/', currentLang(), 'blog']">Blog</a></li>
         </ul>
       </div>
 
       <div class="footer-links">
         <h4>{{ 'FOOTER.LEGAL' | translate }}</h4>
         <ul>
-          <li><a routerLink="/legal/terms">Términos</a></li>
-          <li><a routerLink="/legal/privacy">Privacidad</a></li>
-          <li><a routerLink="/legal/refunds">Reembolsos</a></li>
+          <li><a [routerLink]="['/', currentLang(), 'legal', 'terms']">Términos</a></li>
+          <li><a [routerLink]="['/', currentLang(), 'legal', 'privacy']">Privacidad</a></li>
+          <li><a [routerLink]="['/', currentLang(), 'legal', 'refunds']">Reembolsos</a></li>
         </ul>
       </div>
 
       <div class="footer-contact">
         <h4>{{ 'FOOTER.CONTACT' | translate }}</h4>
-        <p>info@puntacanatours.com</p>
+        <p>info@univeex.com</p>
         <p>+1 (809) 555-0123</p>
         <p>Bávaro, Punta Cana, RD</p>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2024 Punta Cana Tours. All rights reserved.</p>
+      <p>&copy; 2024 Univeex. All rights reserved.</p>
     </div>
   </div>
 </footer>
