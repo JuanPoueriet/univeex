@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { Excursion } from '../../../core/models/excursion.model';
+import { Excursion } from '@univeex/shared/data-access';
 
 @Component({
   selector: 'app-excursion-card',

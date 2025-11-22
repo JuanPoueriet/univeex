@@ -10,7 +10,6 @@ export const LEGAL_ROUTES: Routes = [
     children: [
       { path: 'terms', component: TermsComponent },
       { path: 'privacy', component: PrivacyComponent },
-      { path: 'refunds', component: TermsComponent }, // Reusamos terms por simplicidad, idealmente RefundsComponent
       { path: '', redirectTo: 'terms', pathMatch: 'full' }
     ]
   }

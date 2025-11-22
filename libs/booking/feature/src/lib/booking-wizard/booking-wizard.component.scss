@@ -1,0 +1,7 @@
+.wizard-container { padding: 3rem 1rem; max-width: 600px; margin: 0 auto; }
+.steps-indicator { display: flex; justify-content: space-between; margin-bottom: 2rem; border-bottom: 1px solid #eee; }
+.steps-indicator div { padding: 10px; color: #ccc; &.active { color: #008080; font-weight: bold; border-bottom: 2px solid #008080; } }
+.form-control { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; }
+.actions { display: flex; gap: 1rem; margin-top: 2rem; }
+.btn-secondary { background: white; border: 1px solid #ccc; padding: 10px 20px; border-radius: 50px; cursor: pointer; }
+.total { font-size: 1.5rem; color: #008080; font-weight: bold; margin-top: 1rem; }

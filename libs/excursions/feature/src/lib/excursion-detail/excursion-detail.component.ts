@@ -1,13 +1,10 @@
 import { Component, inject, signal, input, effect, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Router, RouterLink } from '@angular/router'; // Agregar RouterLink
+import { Router, RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { ExcursionsService } from '../../../core/services/excursions.service';
-import { SeoService } from '../../../core/services/seo.service';
-import { LoaderComponent } from '../../../shared/components/loader/loader.component';
-// import { ExcursionsService } from '../../../../core/services/excursions.service';
-// import { SeoService } from '../../../../core/services/seo.service'; // Importar SEO
-// import { LoaderComponent } from '../../../../shared/components/loader/loader.component';
+import { ExcursionsService } from '@univeex/excursions/data-access';
+import { SeoService } from '@univeex/shared/data-access';
+import { LoaderComponent } from '@univeex/shared/ui';
 
 @Component({
   selector: 'app-excursion-detail',
@@ -49,7 +46,6 @@ export class ExcursionDetailComponent {
   bookNow() {
     const exc = this.excursion();
     if (!exc) return;
-    // Lógica de redirección simple al booking con query params
     this.router.navigate(['/es/booking'], { queryParams: { excursionId: exc.id } });
   }
 }

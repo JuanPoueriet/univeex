@@ -1,23 +1,25 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject, signal, effect, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { BlogService, BlogPost } from '@univeex/blog/data-access';
 
 @Component({
   selector: 'app-blog-detail',
   standalone: true,
   imports: [CommonModule, RouterLink],
-  template: `
-    <div class="container page-padding">
-      <a routerLink="/blog" class="back-link">← Volver</a>
-      <h1>Articulo: {{ slug }}</h1>
-      <p>Contenido completo del artículo aquí...</p>
-    </div>
-  `,
-  styles: [`
-    .page-padding { padding-top: 4rem; padding-bottom: 4rem; }
-    .back-link { display: block; margin-bottom: 1rem; color: #008080; }
-  `]
+  templateUrl: './blog-detail.component.html',
+  styleUrl: './blog-detail.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogDetailComponent {
-  @Input() slug?: string;
+  private blogService = inject(BlogService);
+
+  // Input signal would be nicer but sticking to @Input for compat or switch to input()
+  @Input() set slug(value: string) {
+    if (value) {
+      this.blogService.getPostBySlug(value).subscribe(post => this.post.set(post));
+    }
+  }
+
+  post = signal<BlogPost | undefined>(undefined);
 }

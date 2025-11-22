@@ -1,1 +1,107 @@
-<p>vendor-dashboard.component works!</p>
+<div class="dashboard-wrapper">
+  <aside class="dashboard-sidebar">
+    <div class="brand">PartnerHub</div>
+    <nav class="nav-menu">
+      <a routerLink="./" class="nav-item active"><i class="fas fa-chart-pie"></i> Resumen</a>
+      <a class="nav-item"><i class="fas fa-list"></i> Mis Excursiones</a>
+      <a class="nav-item"><i class="fas fa-calendar-alt"></i> Calendario</a>
+      <a class="nav-item"><i class="fas fa-inbox"></i> Mensajes <span class="badge">3</span></a>
+      <a class="nav-item"><i class="fas fa-wallet"></i> Finanzas</a>
+      <div class="divider"></div>
+      <a class="nav-item"><i class="fas fa-cog"></i> Configuración</a>
+    </nav>
+    <div class="user-profile">
+      <img ngSrc="https://ui-avatars.com/api/?name=Paris+Tours&background=0D8ABC&color=fff" width="40" height="40" alt="User">
+      <div class="info">
+        <div class="name">Paris Tours</div>
+        <div class="role">Operador</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="dashboard-content">
+    <header class="top-bar">
+      <h1>Panel de Control</h1>
+      <button class="btn-create">+ Nueva Excursión</button>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="icon bg-blue"><i class="fas fa-eye"></i></div>
+        <div class="data">
+          <span class="label">Visitas Totales</span>
+          <span class="value">24.5k</span>
+          <span class="trend up">↑ 12% este mes</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="icon bg-green"><i class="fas fa-ticket-alt"></i></div>
+        <div class="data">
+          <span class="label">Reservas</span>
+          <span class="value">142</span>
+          <span class="trend up">↑ 5% este mes</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="icon bg-purple"><i class="fas fa-dollar-sign"></i></div>
+        <div class="data">
+          <span class="label">Ingresos</span>
+          <span class="value">$12,840</span>
+          <span class="trend down">↓ 2% vs mes pasado</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="icon bg-orange"><i class="fas fa-star"></i></div>
+        <div class="data">
+          <span class="label">Rating</span>
+          <span class="value">4.8</span>
+          <span class="trend">Basado en 34 reseñas</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-activity">
+      <h2>Reservas Recientes</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente</th>
+              <th>Excursión</th>
+              <th>Fecha Viaje</th>
+              <th>Estado</th>
+              <th>Monto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#BK-9012</td>
+              <td>Juan Pérez</td>
+              <td>Torre Eiffel VIP</td>
+              <td>25 Oct 2025</td>
+              <td><span class="status confirmed">Confirmada</span></td>
+              <td>$130.00</td>
+            </tr>
+            <tr>
+              <td>#BK-9013</td>
+              <td>Maria Smith</td>
+              <td>Cena en el Sena</td>
+              <td>26 Oct 2025</td>
+              <td><span class="status pending">Pendiente</span></td>
+              <td>$210.00</td>
+            </tr>
+            <tr>
+              <td>#BK-9014</td>
+              <td>Carlos Ruiz</td>
+              <td>Versalles Tour</td>
+              <td>28 Oct 2025</td>
+              <td><span class="status cancelled">Cancelada</span></td>
+              <td>$85.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>

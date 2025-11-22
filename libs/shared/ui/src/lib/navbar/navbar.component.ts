@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs';
-import { AuthService } from '../../../core/services/auth.service.ts';
-// import { AuthService } from '../../../core/services/auth.service';
+import { AuthService } from '@univeex/shared/data-access';
 
 @Component({
   selector: 'app-navbar',

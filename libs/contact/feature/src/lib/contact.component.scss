@@ -1,5 +1,4 @@
-// CORRECCIÓN: Ruta relativa
-@use '../../../styles/variables/index' as vars;
+@use '../../../../styles/variables/index' as vars;
 
 .page-header {
   padding: vars.$spacing-3xl 0;

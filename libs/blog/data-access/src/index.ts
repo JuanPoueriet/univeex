@@ -1,1 +1,1 @@
-export * from './lib/blog-data-access/blog-data-access';
+export * from './lib/services/blog.service';

@@ -1,1 +1,1 @@
-export * from './lib/contact-data-access/contact-data-access';
+export * from './lib/services/contact.service';

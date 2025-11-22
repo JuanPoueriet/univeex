@@ -1,7 +1,7 @@
 import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { ContactService } from '../../core/services/contact.service';
+import { ContactService, ContactMessage } from '@univeex/contact/data-access';
 
 @Component({
   selector: 'app-contact',
@@ -18,13 +18,14 @@ export class ContactComponent {
   contactForm = this.fb.group({
     name: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
+    subject: ['Consultas Generales', Validators.required], // Added default subject to match interface
     message: ['', Validators.required]
   });
 
   onSubmit() {
     if (this.contactForm.valid) {
-      // @ts-ignore
-      this.contactService.sendMessage(this.contactForm.value).subscribe(() => {
+      const message = this.contactForm.value as ContactMessage;
+      this.contactService.sendMessage(message).subscribe(() => {
         alert('Mensaje enviado');
         this.contactForm.reset();
       });
