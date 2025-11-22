@@ -2,7 +2,6 @@ import { Injectable, signal } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Excursion } from '@univeex/shared/data-access';
 
-// CAMBIO: Renombrado de INITIAL_DATA a EXCURSIONS_DATA para que coincida con el import del server
 export const EXCURSIONS_DATA: Excursion[] = [
   {
     id: '1',
@@ -97,8 +96,6 @@ export const EXCURSIONS_DATA: Excursion[] = [
 
 @Injectable({ providedIn: 'root' })
 export class ExcursionsService {
-  // Signal para mantener el estado "vivo" de la lista
-  // CAMBIO: Ahora usa EXCURSIONS_DATA
   private excursionsSignal = signal<Excursion[]>(EXCURSIONS_DATA);
 
   getExcursions(): Observable<Excursion[]> {
@@ -117,12 +114,10 @@ export class ExcursionsService {
     return of(this.excursionsSignal().find(e => e.id === id));
   }
 
-  // Nuevo: Método para que el Vendedor cree una excursión
   addExcursion(excursion: Excursion) {
     this.excursionsSignal.update(list => [excursion, ...list]);
   }
 
-  // Nuevo: Obtener excursiones de un vendedor específico
   getVendorExcursions(vendorId: string): Observable<Excursion[]> {
     return of(this.excursionsSignal().filter(e => e.vendor.id === vendorId));
   }

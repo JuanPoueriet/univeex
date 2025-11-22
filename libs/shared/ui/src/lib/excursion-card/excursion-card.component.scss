@@ -1,5 +1,5 @@
-@use '../../../../styles/variables/index' as vars;
-@use '../../../../styles/mixins/index' as mixins;
+@use 'variables' as vars;
+@use 'mixins' as mixins;
 
 .card {
   background: vars.$color-bg-white;
