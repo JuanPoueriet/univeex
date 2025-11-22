@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+  PROVIDER
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+model User {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  passwordHash String
+  firstName    String
+  lastName     String
+  role         Role      @default(USER)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  deletedAt    DateTime?
+
+  provider     Provider?
+  bookings     Booking[]
+
+  @@index([email])
+}
+
+model Provider {
+  id          String    @id @default(uuid())
+  userId      String    @unique
+  companyName String
+  website     String?
+  description String?
+  verified    Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+
+  user        User      @relation(fields: [userId], references: [id])
+  tours       Tour[]
+
+  @@index([companyName])
+}
+
+model Tour {
+  id          String    @id @default(uuid())
+  providerId  String
+  slug        String    @unique
+  title       String
+  description String
+  price       Decimal   @db.Decimal(10, 2)
+  currency    String    @default("USD")
+  city        String
+  country     String
+  duration    Int       // in minutes
+  maxGuests   Int
+  startDate   DateTime
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+
+  provider    Provider  @relation(fields: [providerId], references: [id])
+  bookings    Booking[]
+
+  @@index([slug])
+  @@index([city])
+  @@index([startDate])
+  @@index([price])
+}
+
+model Booking {
+  id          String        @id @default(uuid())
+  tourId      String
+  userId      String
+  status      BookingStatus @default(PENDING)
+  guests      Int
+  totalPrice  Decimal       @db.Decimal(10, 2)
+  bookingDate DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  deletedAt   DateTime?
+
+  tour        Tour          @relation(fields: [tourId], references: [id])
+  user        User          @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([tourId])
+  @@index([status])
+}
