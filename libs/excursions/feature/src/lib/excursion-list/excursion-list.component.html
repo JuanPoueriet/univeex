@@ -1,0 +1,59 @@
+<div class="container page-padding">
+  <app-breadcrumbs [items]="[{label: 'Excursiones'}]"></app-breadcrumbs>
+
+  <div class="header-section">
+    <h1>{{ 'NAV.EXCURSIONS' | translate }}</h1>
+    <p>Explora las mejores actividades en el paraíso</p>
+  </div>
+
+  <div class="layout-grid">
+    <aside class="filters-sidebar">
+      <h3>Filtros</h3>
+
+      <div class="filter-group">
+        <label>Categoría</label>
+        <select [ngModel]="filterCategory()" (ngModelChange)="filterCategory.set($event)">
+          <option value="all">Todas</option>
+          <option value="adventure">Aventura</option>
+          <option value="relaxation">Relax</option>
+          <option value="culture">Cultura</option>
+          <option value="family">Familia</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Precio Máx: ${{ filterPriceMax() }}</label>
+        <input type="range" min="50" max="200" step="10"
+               [ngModel]="filterPriceMax()" (ngModelChange)="filterPriceMax.set($event)">
+      </div>
+
+      <div class="filter-group">
+        <label>Duración</label>
+        <div class="radio-group">
+          <label><input type="radio" name="dur" [ngModel]="filterDuration()" (ngModelChange)="filterDuration.set('all')" value="all"> Cualquiera</label>
+          <label><input type="radio" name="dur" [ngModel]="filterDuration()" (ngModelChange)="filterDuration.set('short')" value="short"> Corta (< 4h)</label>
+          <label><input type="radio" name="dur" [ngModel]="filterDuration()" (ngModelChange)="filterDuration.set('medium')" value="medium"> Media (4-7h)</label>
+          <label><input type="radio" name="dur" [ngModel]="filterDuration()" (ngModelChange)="filterDuration.set('long')" value="long"> Larga (> 7h)</label>
+        </div>
+      </div>
+    </aside>
+
+    <main class="results-grid">
+      @if (isLoading()) {
+        @for (i of [1,2,3,4,5,6]; track i) {
+          <app-skeleton-loader height="380px"></app-skeleton-loader>
+        }
+      } @else {
+        @for (excursion of filteredExcursions(); track excursion.id) {
+          <app-excursion-card [excursion]="excursion"></app-excursion-card>
+        } @empty {
+          <div class="no-results">
+            <i class="fas fa-search"></i>
+            <p>No encontramos excursiones con esos filtros.</p>
+            <button class="btn btn-outline" (click)="filterCategory.set('all'); filterPriceMax.set(200)">Limpiar Filtros</button>
+          </div>
+        }
+      }
+    </main>
+  </div>
+</div>

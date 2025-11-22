@@ -1,0 +1,81 @@
+<div class="container wizard-wrapper">
+  <div class="progress-bar">
+    <div class="bar" [style.width.%]="step() * 25"></div>
+  </div>
+
+  <h2>Publicar Nueva Experiencia</h2>
+
+  <form [formGroup]="form">
+    @if (step() === 1) {
+      <div class="step-card fade-in">
+        <h3>Lo básico</h3>
+        <label>Título de la experiencia</label>
+        <input formControlName="title" type="text" placeholder="Ej: Clase de cocina en Roma">
+
+        <label>Categoría</label>
+        <select formControlName="category">
+          <option value="adventure">Aventura</option>
+          <option value="culture">Cultura</option>
+          <option value="food">Gastronomía</option>
+          <option value="nature">Naturaleza</option>
+        </select>
+
+        <label>Descripción completa</label>
+        <textarea formControlName="description" rows="5"></textarea>
+      </div>
+    }
+
+    @if (step() === 2) {
+      <div class="step-card fade-in">
+        <h3>¿Dónde es?</h3>
+        <label>Ciudad</label>
+        <input formControlName="city" type="text" placeholder="Ej: Barcelona">
+        <label>País</label>
+        <input formControlName="country" type="text" placeholder="Ej: España">
+      </div>
+    }
+
+    @if (step() === 3) {
+      <div class="step-card fade-in">
+        <h3>Detalles Logísticos</h3>
+        <label>Duración (Ej: 3 Horas)</label>
+        <input formControlName="duration" type="text">
+
+        <label>Puntos Destacados</label>
+        <div formArrayName="highlights">
+          @for (control of highlights.controls; track $index) {
+            <div class="input-row">
+              <input [formControlName]="$index" placeholder="Ej: Ver el atardecer">
+              <button type="button" class="btn-sm" (click)="removeHighlight($index)">x</button>
+            </div>
+          }
+        </div>
+        <button type="button" class="btn-link" (click)="addHighlight()">+ Agregar otro punto</button>
+      </div>
+    }
+
+    @if (step() === 4) {
+      <div class="step-card fade-in">
+        <h3>Precio y Galería</h3>
+        <label>Precio por persona ($USD)</label>
+        <input formControlName="price" type="number" min="0">
+
+        <label>URL de Imagen Principal</label>
+        <input formControlName="imageUrl" type="text" placeholder="https://...">
+        <div class="preview" *ngIf="form.get('imageUrl')?.value">
+            <img [src]="form.get('imageUrl')?.value" alt="Preview">
+        </div>
+      </div>
+    }
+
+    <div class="actions">
+      <button type="button" class="btn-secondary" (click)="back()" *ngIf="step() > 1">Atrás</button>
+
+      <button type="button" class="btn-primary" (click)="next()" *ngIf="step() < 4">Siguiente</button>
+
+      <button type="button" class="btn-success" (click)="submit()" *ngIf="step() === 4" [disabled]="form.invalid">
+        Publicar Excursión
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+// CORRECCIÓN: Ruta relativa
+@use '../../../styles/variables/index' as vars;
+
+.page-header {
+  padding: vars.$spacing-3xl 0;
+  text-align: center;
+}
+
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: vars.$spacing-3xl;
+}

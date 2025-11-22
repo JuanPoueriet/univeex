@@ -1,0 +1,13 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li><a routerLink="/">Inicio</a></li>
+    @for (item of items(); track item.label) {
+      <li class="separator">/</li>
+      @if (item.url) {
+        <li><a [routerLink]="item.url">{{ item.label }}</a></li>
+      } @else {
+        <li class="active" aria-current="page">{{ item.label }}</li>
+      }
+    }
+  </ol>
+</nav>

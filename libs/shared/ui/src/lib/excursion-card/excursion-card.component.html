@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-image">
+    <img [ngSrc]="excursion().imageUrl" [alt]="excursion().title" fill priority>
+
+    <div class="wishlist-btn">
+      <i class="far fa-heart"></i>
+    </div>
+
+    <div class="badge-location">
+      <i class="fas fa-map-marker-alt"></i> {{ excursion().location.city }}, {{ excursion().location.country }}
+    </div>
+  </div>
+
+  <div class="card-content">
+    <div class="card-header">
+      <div class="rating">
+        <span class="stars">★ {{ excursion().rating }}</span>
+        <span class="count">({{ excursion().reviewsCount }})</span>
+      </div>
+      @if (excursion().vendor.verified) {
+        <div class="vendor-badge" title="Anfitrión Verificado">
+          <i class="fas fa-shield-alt"></i> Superhost
+        </div>
+      }
+    </div>
+
+    <h3 [routerLink]="['/excursions', excursion().slug]">{{ excursion().title }}</h3>
+
+    <p class="description">{{ excursion().shortDescription }}</p>
+
+    <div class="card-footer">
+      <div class="price">
+        <span class="label">Desde</span>
+        <div class="amount-wrapper">
+          @if (excursion().originalPrice) {
+            <span class="original-price">\${{ excursion().originalPrice }}</span>
+          }
+          <span class="amount">\${{ excursion().price }}</span>
+        </div>
+      </div>
+      <div class="duration">
+        <i class="far fa-clock"></i> {{ excursion().duration }}
+      </div>
+    </div>
+  </div>
+</div>
