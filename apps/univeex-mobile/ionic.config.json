@@ -1,0 +1,7 @@
+{
+  "name": "univeex-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
